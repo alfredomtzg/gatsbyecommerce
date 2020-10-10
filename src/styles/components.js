@@ -122,7 +122,7 @@ export const StyledJumbo = styled.div`
     background-color: ${colors.darkBlue};
     z-index: -1;
     position: absolute;
-    transform: rotate(-19deg);
+    /* transform: rotate(-19deg); */
     border-radius: 35%;
     top: -25%;
     width: 120%;
