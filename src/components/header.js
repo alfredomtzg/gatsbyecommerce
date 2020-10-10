@@ -16,6 +16,16 @@ const Header = ({ siteTitle }) => (
             Productos
           </Link>
         </MenuItem>
+        <MenuItem>
+          <a href="https://alfredomtzg.github.io/challenge-platzi-master/">Alfredo Platzi Master</a>
+        </MenuItem>
+        <MenuItem>
+          <Link to='/cart'>
+            <span>
+              <img src='https://i.postimg.cc/L6wpMxLt/cart.png' alt='LogoCart' />
+            </span>
+          </Link>
+        </MenuItem>
       </ul>
     </nav>
     <div>
