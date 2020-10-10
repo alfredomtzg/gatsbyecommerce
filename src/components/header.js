@@ -11,12 +11,12 @@ const Header = ({ siteTitle }) => (
     </Link>
     <nav>
       <ul>
-        <MenuItem>
+        <MenuItem margin>
           <Link to='/'>
             Productos
           </Link>
         </MenuItem>
-        <MenuItem>
+        <MenuItem margin>
           <a href="https://alfredomtzg.github.io/challenge-platzi-master/">Alfredo Platzi Master</a>
         </MenuItem>
         <MenuItem>
