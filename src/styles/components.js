@@ -34,7 +34,7 @@ export const StyledHeader = styled.header`
     margin: 0;
     background-color: ${colors.green};
     height: 100%;
-    padding: 0.1rem 0.8rem; 
+    padding: 0.5rem 0.8rem; 
   }
   & ul {
     list-style: none;
@@ -122,7 +122,7 @@ export const StyledJumbo = styled.div`
     background-color: ${colors.darkBlue};
     z-index: -1;
     position: absolute;
-    /* transform: rotate(-19deg); */
+    transform: rotate(-19deg);
     border-radius: 35%;
     top: -25%;
     width: 120%;
