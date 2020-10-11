@@ -1,11 +1,10 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import styled from 'styled-components'
-import { Jumbo, SEO } from "../components"
+import { Jumbo, SEO, Product } from "../components"
 
 
 export const query = graphql`
-query GET_DESCRIPTION {
+query GET_DATA {
   allSite {
     edges {
       node {
@@ -15,14 +14,32 @@ query GET_DESCRIPTION {
       }
     }
   }
+
+  allStripePrice{
+    edges{
+      node{
+        id
+        unit_amount
+        product{
+          name
+          metadata{
+            img
+            description
+            wear
+          }      
+        }
+      }
+    }
+  }
+
 }
 `
-const Button = styled.button`
-color: white
-`
 
-const IndexPage = ({ data }) =>
-  (
+
+
+const IndexPage = ({ data }) => {
+  console.log(data);
+  return (
     <>
       <SEO title="Home" />
       <Jumbo description={data.allSite.edges[0].node.siteMetadata.description} />
@@ -31,11 +48,11 @@ const IndexPage = ({ data }) =>
       <p>Now go build something great.</p>
       <Link to="/thanks">Go to thanks</Link>
       <br></br>
-      <Button>
-        <Link to="/sorry">Go to Sorry</Link>
-      </Button>
+      <Link to="/sorry">Go to Sorry</Link>
+      <Product products={data.allStripePrice.edges} />
     </>
   )
+}
 
 
 export default IndexPage
