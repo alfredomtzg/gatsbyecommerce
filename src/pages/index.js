@@ -1,7 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
+import styled from 'styled-components'
 import { Jumbo, SEO } from "../components"
+
 
 export const query = graphql`
 query GET_DESCRIPTION {
@@ -16,6 +17,10 @@ query GET_DESCRIPTION {
   }
 }
 `
+// const Button = styled.button`
+
+// `
+
 const IndexPage = ({ data }) =>
   (
     <>
