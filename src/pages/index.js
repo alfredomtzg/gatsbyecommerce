@@ -17,9 +17,9 @@ query GET_DESCRIPTION {
   }
 }
 `
-// const Button = styled.button`
-
-// `
+const Button = styled.button`
+color: white
+`
 
 const IndexPage = ({ data }) =>
   (
@@ -31,7 +31,9 @@ const IndexPage = ({ data }) =>
       <p>Now go build something great.</p>
       <Link to="/thanks">Go to thanks</Link>
       <br></br>
-      <Link to="/sorry">Go to Sorry</Link>
+      <Button>
+        <Link to="/sorry">Go to Sorry</Link>
+      </Button>
     </>
   )
 
