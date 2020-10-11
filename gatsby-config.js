@@ -1,5 +1,5 @@
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env.${process.env.NODE_ENV}`,
 })
 module.exports = {
   siteMetadata: {
@@ -39,10 +39,11 @@ module.exports = {
     },
     {
       resolve: `gatsby-source-stripe`,
-      option: {
-        objects: ['Sku'],
-        secretKey: process.env.STRIPE_SK
-      }
+      options: {
+        objects: ['Product', 'Sku'],
+        secretKey: process.env.STRIPE_SK,
+        downloadFiles: true,
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
