@@ -1,8 +1,11 @@
-// import Typography from "typography"
-// import grandViewTheme from "typography-theme-grand-view"
+import Typography from "typography"
 
-// const typography = new Typography(grandViewTheme)
 
-// // Export helper functions
-// export const { scale, rhythm, options } = typography
-// export default typography
+const typography = new Typography({
+  baseFontSize: '18px',
+  baseLineHeight: 1.666,
+  headerFontFamily: ['Lato', 'Helvetica Neue', `Arial`],
+  bodyFontFamily: ['Open Sans', 'Roboto', 'Georgia'],
+})
+
+export default typography
