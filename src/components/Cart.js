@@ -21,14 +21,14 @@ export default function Cart() {
     getTotal()
   }, [])
 
-  const handleSubmit = async e => {
-    e.preventDefault()
+  const handleSubmit = async event => {
+    event.preventDefault()
 
-    let prod = cart.map(({ id, quantity }) => ({ price: id, quantity: quantity }))
+    let item = cart.map(({ id, quantity }) => ({ price: id, quantity: quantity }))
 
     const { error } = await stripe.redirectToCheckout({
-      lineItems: prod,
-      mode: "payment",
+      lineItems: item,
+      mode: `subscription`,
       successUrl: process.env.SUCCESS_REDIRECT,
       cancelUrl: process.env.CANCEL_REDIRECT,
     })
@@ -69,7 +69,7 @@ export default function Cart() {
           <Link to='/'>
             <Button type='outline' >Volver</Button>
           </Link>
-          <Button onClick={() => handleSubmit()} disabled={cart.length === 0} >Buy</Button>
+          <Button onClick={handleSubmit} disabled={cart.length === 0} >Buy</Button>
         </div>
       </nav>
     </StyledCart>

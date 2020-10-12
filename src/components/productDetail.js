@@ -12,13 +12,27 @@ import {
 import { SEO, Stars } from './'
 import { CartContext } from '../Context'
 
-export default function ProductDetail({ unit_amount, id, product: { name, metadata: { color, description, wear, img } } }) {
+export default function ProductDetail({
+  unit_amount, id,
+  product: {
+    name,
+    metadata: {
+      color,
+      description,
+      wear,
+      img } }
+}) {
   const formatePrice = priceFormat(unit_amount)
   const [size, setSize] = useState(2)
   const [qty, setQty] = useState(1)
   const { addToCart } = useContext(CartContext)
   const handleSubmit = () => {
-    addToCart({ unit_amount, id, img, quantity: qty })
+    addToCart({
+      unit_amount,
+      id,
+      img,
+      quantity: qty
+    })
   }
 
   return (
