@@ -1,4 +1,3 @@
-import { element } from 'prop-types'
 import React, { createContext, useState } from 'react'
 
 export const CartContext = createContext()
@@ -11,10 +10,10 @@ export const CartProvider = ({ children }) => {
   }
   return (
     <CartContext.Provider
-      value={
+      value={{
         cart,
         addToCart
-      } >
+      }} >
       {children}
     </CartContext.Provider>
   )
