@@ -9,7 +9,7 @@ import {
   StyledProductDetail,
   QtySelect
 } from '../styles/components'
-import { SEO } from './'
+import { SEO, Stars } from '.'
 
 export default function ProductDetail({ unit_amount, sku: id, product: { name, metadata } }) {
   const formatePrice = priceFormat(unit_amount)
@@ -23,6 +23,7 @@ export default function ProductDetail({ unit_amount, sku: id, product: { name, m
         <Tag>Popular</Tag>
         <h2> {name}</h2>
         <b>USD {formatePrice}</b>
+        <Stars />
         {metadata.wear && (
           <SizeSelect selected={size}>
             <SizeButton onClick={() => setSize(1)}>XS</SizeButton>
