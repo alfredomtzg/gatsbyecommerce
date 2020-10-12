@@ -17,24 +17,24 @@ export default function Cart() {
   }
 
   useEffect(() => {
-    setStripe(
-      window.stripe(process.env.STRIPE_PK, { betas: ['checkout_beta_4'] })
-    )
+    setStripe(window.Stripe(process.env.STRIPE_PK))
     getTotal()
   }, [])
 
   const handleSubmit = async e => {
     e.preventDefault()
 
+    let prod = cart.map(({ id, quantity }) => ({ price: id, quantity: quantity }))
+
     const { error } = await stripe.redirectToCheckout({
-      item: cart.map(({ id, quantity }) => ({ id, quantity })),
+      lineItems: prod,
+      mode: "payment",
       successUrl: process.env.SUCCESS_REDIRECT,
-      cancelUrl: process.env.CANCEL_REDIRECT
+      cancelUrl: process.env.CANCEL_REDIRECT,
     })
     if (error) {
       throw error
     }
-
   }
 
   return (
