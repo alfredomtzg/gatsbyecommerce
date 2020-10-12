@@ -15,6 +15,10 @@ export default function Cart() {
     )
   }
 
+  useEffect(() => {
+    getTotal()
+  }, [])
+
   return (
     <StyledCart>
       <h2> Carito de Compras</h2>
@@ -41,7 +45,7 @@ export default function Cart() {
       <nav>
         <div>
           <h3> Subtotal: </h3>
-          <small>Total</small>
+          <small>USD {priceFormat(total)}</small>
         </div>
         <div>
           <Link to='/'>
