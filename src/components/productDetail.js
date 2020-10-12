@@ -5,7 +5,7 @@ import {
   SizeButton,
   // QtyButton,
   SizeSelect,
-  // Button,
+  Button,
   StyledProductDetail,
   QtySelect
 } from '../styles/components'
@@ -25,7 +25,6 @@ export default function ProductDetail({ unit_amount, sku: id, product: { name, m
         <b>USD {formatePrice}</b>
         <Stars />
         {wear && <h3> Color: {color} </h3>}
-        <small>{color}</small>
         <small>{description}</small>
         {wear && (
           <SizeSelect selected={size}>
@@ -41,6 +40,7 @@ export default function ProductDetail({ unit_amount, sku: id, product: { name, m
           <input type='text' disabled value={qty} />
           <button onClick={() => setQty(qty + 1)} > + </button>
         </QtySelect>
+        <Button>Agregar al Carrito</Button>
       </div>
     </StyledProductDetail>
   )

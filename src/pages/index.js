@@ -39,7 +39,7 @@ query GET_DATA {
 
 
 const IndexPage = ({ data }) => {
-  console.log(data);
+
   return (
     <>
       <SEO title="Home" />
