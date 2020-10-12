@@ -11,7 +11,7 @@ export default function Cart() {
 
   const getTotal = () => {
     setTotal(
-      cart.reduce((acc, current) => acc + current.price * current.quantity, 0)
+      cart.reduce((acc, current) => acc + current.unit_amount * current.quantity, 0)
     )
   }
 
@@ -31,12 +31,12 @@ export default function Cart() {
             <th> Total</th>
           </tr>
           {cart.map(swag => (
-            <tr key={swag.id}>
+            <tr key={swag.id}  >
               <td>
                 <img src={swag.img} alt={swag.name} />
               </td>
               <td>USD {priceFormat(swag.unit_amount)}</td>
-              <td>{swag.quantity}</td>
+              <td>{swag.quantity}  </td>
               <td>{priceFormat(swag.quantity * swag.unit_amount)}</td>
             </tr>
           ))}
