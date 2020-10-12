@@ -24,7 +24,7 @@ export default function ProductDetail({ unit_amount, sku: id, product: { name, m
         <h2> {name}</h2>
         <b>USD {formatePrice}</b>
         <Stars />
-        {metadata.wear && <h3>Color: Azul</h3>}
+        {metadata.wear && <h3>Color: {metadata.color}</h3>}
         <small>{metadata.description}</small>
         {metadata.wear && (
           <SizeSelect selected={size}>

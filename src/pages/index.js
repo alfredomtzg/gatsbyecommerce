@@ -26,6 +26,7 @@ query GET_DATA {
             img
             description
             wear
+            color
           }      
         }
       }
