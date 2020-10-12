@@ -1,6 +1,6 @@
 import React from 'react'
-import { productDetail } from '../components'
+import { ProductDetail } from '../components'
 
 export default function Product({ pageContext }) {
-  return <productDetail {...pageContext} />
+  return <ProductDetail {...pageContext} />
 }
