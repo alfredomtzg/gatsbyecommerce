@@ -28,7 +28,7 @@ export default function Cart() {
 
     const { error } = await stripe.redirectToCheckout({
       lineItems: item,
-      mode: `subscription`,
+      mode: `price`,
       successUrl: process.env.SUCCESS_REDIRECT,
       cancelUrl: process.env.CANCEL_REDIRECT,
     })
